@@ -1,48 +1,66 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
   <HTML>
   <HEAD>
-  <META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=utf-8">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=utf-8"> 
+  <link rel="stylesheet" media="screen" type="text/css" title="style" href="style.css" />
+
   <TITLE>Todolist</TITLE>
   </HEAD>
   <BODY>
 
 <h1> TODOLIST Marcoz, Vienne</h1>
 
- Sujet :
+<div id="todoS">
+
+Nom:
+<form name="name"><input type="text" size="30"/>
+</form>
+Prénom:
+<form name="prename"><input type="text" size="30"/>
+</form>
+Sexe:
 <br/>
-	<form> 
+<form name="sex">Homme:<input name="sexe" type="radio" value="H">
+<br/>
+<form name="sex">Femme:<input name="sexe" type="radio" value="F">
+</form>
+Sujet :
+<form name="subject" METHOD=POST>
+ 
 			<input type="text" name="sujet" size="50">
-<br/>
-<br/>
+</form>
 Description:
-<br/>			
-			<textarea name="description" rows="10" cols="40">
-			</textarea>
-<br/>
-<br/>
+	<form name="zonetxt" METHOD=POST>
+			
+			<textarea name="description" rows="10" cols="40"></textarea>
+	</form>
 Priorité
-<br/>		
-<select name="priorite"  > 
+	<form name="list" METHOD=POST>		
+	
+			<select name="priorite"  > 
 						<option value="low" >
 				Faible
-			</option>
+						</option>
+
 						<option value="medium" >
 				Moyenne
-			</option>
+						</option>
+
 						<option value="high" >
 				Elevée
-			</option>
-					</select>
-<br/>
-Status
-<br/>
-<input type="checkbox" name="status" value="status" /> Fini
-<br />
-<input type="submit" value="Submit" />
-																
-
-
+						</option>
+			</select>
 	</form>
+Status
+<form name="choix" METHOD=POST>
+<input type="mail" name="statut" value="status" /> Fini
+</form>
+<form name="done">
+<input type="submit" value="Submit" />
+</form>
+
+</div>														
+
 
      
 
