@@ -1,0 +1,30 @@
+.h1 {
+
+
+font-weight : bold
+
+center;
+
+color:red;
+
+       }
+
+
+. {
+
+font: italic;
+    
+text-indent:12px;
+
+}
+
+. {
+
+border-style: outset ;
+
+
+}
+
+. {
+  -moz-border-radius : 10px 10px / 5px 5px;
+} 
