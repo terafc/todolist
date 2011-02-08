@@ -1,4 +1,10 @@
-h1 {
+label {
+display:block;
+width:100px;
+float: left;
+}
+
+#h1 {
 
 text-decoration:blink;
 text-decoration:slide;
@@ -9,7 +15,7 @@ color:grey;
        }
 
 
-div {
+#div {
 
 font-style: italic;
     

@@ -7,68 +7,102 @@
   <TITLE>Todolist</TITLE>
   </HEAD>
   <BODY>
-
 <h1> TODOLIST Marcoz, Vienne</h1>
-
-<div id="todoS">
-
-Nom:
-<form name="name"><input type="text" size="30"/>
-</form>
-Prénom:
-<form name="prename"><input type="text" size="30"/>
-</form>
-Sexe:
+	<div id="todoS">
 <br/>
-<form name="sex">Homme:<input name="sexe" type="radio" value="H">
-<br/>
-<form name="sex">Femme:<input name="sexe" type="radio" value="F">
-</form>
-Sujet :
-<form name="subject" METHOD=POST>
- 
-			<input type="text" name="sujet" size="50">
-</form>
-Description:
-	<form name="zonetxt" METHOD=POST>
-			
-			<textarea name="description" rows="10" cols="40"></textarea>
+	<form action="redirection.html" method="get"> <!-- Permet de renvoyer vers la page redirection.html apres avoir appuyer sur le bouton "envoyer" -->
+
+	<!-- <form action="MAILTO:terafc@gmail.com" method="post" enctype="text/plain"> --> <!-- Ceci permettra d'envoyer tous ce qu'il y a dans la balise form vers l'adresse email indiqué -->
+
+<fieldset> <!-- Permet d'organiser les formulaires ou autres choses en plusieurs zones-->
+	<legend>Information:</legend>
+		<label for="nom">Nom:</label>
+			<input type="text" size="30" id="nom" name="Nom"/><br />
+
+		<label for="prenom">Prénom:</label>
+			<input type="text" size="30" id="prenom" name="Prénom"/><br /><br />
+		<label for="email">e-mail:</label>
+			<input type="email" size="30" id="email" name="E-mail"></br>
+
+		<label for="sexe">Sexe:</label>
+			Homme:<input name="Sexe" type="radio" value="Homme" id="sexe"/>
+			Femme: <input name="Sexe" type="radio" id="sexe" value="Femme"/><br /><br/>
+		<label for="age">Âge</label>
+			<select id="age" name="Âge">
+				<option value="nombre">16</option>
+				<option value="nombre">17</option>
+				<option value="nombre">18</option>
+				<option value="nombre">19</option>
+				<option value="nombre">20</option>
+				<option value="nombre">21</option>
+				<option value="nombre">22</option>
+				<option value="nombre">23</option>
+				<option value="nombre">24</option>
+				<option value="nombre">25</option>
+				<option value="nombre">26</option>
+				<option value="nombre">27</option>
+				<option value="nombre">28</option>
+				<option value="nombre">29</option>
+				<option value="nombre">30</option>
+				<option value="nombre">31</option>
+				<option value="nombre">32</option>
+				<option value="nombre">33</option>
+				<option value="nombre">34</option>
+				<option value="nombre">35</option>
+				<option value="nombre">36</option>
+				<option value="nombre">37</option>
+				<option value="nombre">38</option>
+				<option value="nombre">39</option>
+				<option value="nombre">40</option>
+				<option value="nombre">41</option>
+				<option value="nombre">42</option>
+				<option value="nombre">43</option>
+				<option value="nombre">44</option>
+				<option value="nombre">45</option>
+				<option value="nombre">46</option>
+				<option value="nombre">47</option>
+				<option value="nombre">48</option>
+				<option value="nombre">49</option>
+				<option value="nombre">50</option>
+				<option value="nombre">51</option>
+		</select><br/><br/>
+
+		<label for="fonction">Fonction:</label>
+			<select name="Fonction" id="fonction">
+				<option value="etudiant">Etudiant</option>
+				<option value="enseignant">Enseignant</option>
+				<option value="autre">Autre</option>
+			</select><br /><br />
+</fieldset><br />
+
+<fieldset>
+	<legend>Tache</legend>			
+		<label for="sujet">Sujet :</label>
+			<input type="text" name="Sujet" size="50"/><br /><br />
+
+		<label for="desc">Description:</label>
+			<textarea id="prio" name="Déscription" rows="10" cols="40"></textarea><br /><br />
+
+		<label for="fich">Fichier utile:</label>
+			<input type="file" name="Upload"><br/>
+
+		<label for="prio">Priorité:</label>
+			<select id="prio" name="Priorité"  > 
+				<option value="faible" >
+					Faible
+				</option>
+				<option value="moyen" >
+					Moyenne
+				</option>
+				<option value="eleve" >
+					Elevée
+				</option>
+			</select><br/><br />
+
+		<label for ="done"></label><input type="submit" value="Envoyer" id="done"/><input type="reset" value="Reset">
+		<!-- l'input de type submit effectue l'ACTION dans le balise <FORM> -->
+</fieldset>
 	</form>
-Priorité
-	<form name="list" METHOD=POST>		
-	
-			<select name="priorite"  > 
-						<option value="low" >
-				Faible
-						</option>
-
-						<option value="medium" >
-				Moyenne
-						</option>
-
-						<option value="high" >
-				Elevée
-						</option>
-			</select>
-	</form>
-Status
-<form name="choix" METHOD=POST>
-<input type="mail" name="statut" value="status" /> Fini
-</form>
-<form name="done">
-<input type="submit" value="Submit" />
-</form>
-
-</div>														
-
-
-     
-
-
-
-
-
-
-     
+	</div>														
   </BODY>
   </HTML>
