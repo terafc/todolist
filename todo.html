@@ -8,9 +8,10 @@
   </HEAD>
   <BODY>
 <h1> TODOLIST Marcoz, Vienne</h1>
-	<div id="todoS">
+	<div id="pretodo">
 <br/>
-	<form action="redirection.html" method="get"> <!-- Permet de renvoyer vers la page redirection.html apres avoir appuyer sur le bouton "envoyer" -->
+	<form method="post">
+	<!-- <form method="get" action="redirection.html"> Permet de renvoyer vers la page redirection.html apres avoir appuyer sur le bouton "envoyer" -->
 
 	<!-- <form action="MAILTO:terafc@gmail.com" method="post" enctype="text/plain"> --> <!-- Ceci permettra d'envoyer tous ce qu'il y a dans la balise form vers l'adresse email indiqué -->
 
@@ -58,7 +59,7 @@
 				<option value="nombre">42</option>
 				<option value="nombre">43</option>
 				<option value="nombre">44</option>
-				<option value="nombre">45</option>
+				<opti<form method="post">on value="nombre">45</option>
 				<option value="nombre">46</option>
 				<option value="nombre">47</option>
 				<option value="nombre">48</option>
@@ -81,10 +82,7 @@
 			<input type="text" name="Sujet" size="50"/><br /><br />
 
 		<label for="desc">Description:</label>
-			<textarea id="prio" name="Déscription" rows="10" cols="40"></textarea><br /><br />
-
-		<label for="fich">Fichier utile:</label>
-			<input type="file" name="Upload"><br/>
+			<textarea id="prio" name="Description" rows="10" cols="40"></textarea><br /><br />
 
 		<label for="prio">Priorité:</label>
 			<select id="prio" name="Priorité"  > 
@@ -99,10 +97,14 @@
 				</option>
 			</select><br/><br />
 
-		<label for ="done"></label><input type="submit" value="Envoyer" id="done"/><input type="reset" value="Reset">
+		<label for ="done"></label><input id="add_todo" type="submit" value="Envoyer" id="done"/><input type="reset" value="Reset">
 		<!-- l'input de type submit effectue l'ACTION dans le balise <FORM> -->
 </fieldset>
 	</form>
-	</div>														
+	</div>
+	<div id="todos">
+	</div>													
   </BODY>
+<script src="jquery.js"></script>
+<script src="script-dh.js"></script> <!-- Les fichiers javascript sont tjrs à ajoutés apres le body -->
   </HTML>
