@@ -1,0 +1,52 @@
+head {
+
+	font-family: Arial, "Times New Roman", Verdana, serif;
+}
+
+body {
+
+	background-color:#C0C0C0;
+	font-family: Arial, "Times New Roman", Verdana, serif;
+
+}
+.cadrext
+ { 
+	width: 95%;
+	/*margin: auto;*/
+	border:1px solid;
+	background-image: url("16x9.jpg");
+	
+}
+.cadreup
+{
+	margin-left:25%;
+	/*margin-right:2%;*/
+	color: #FFFFFF;
+	font-family: Arial, "Times New Roman", Verdana, serif;
+}
+
+h1
+{
+	text-align:center;
+}
+
+.name
+{
+	float:right;
+}
+
+#todos
+{
+	width: 55%;
+	color: white;
+	font-family: Arial, "Times New Roman", Verdana, serif;
+}
+
+#icon {
+
+	width: 20%;
+}
+
+titre {
+	padding-top: 50%;
+}

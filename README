@@ -1,0 +1,325 @@
+README :																											MARCOZ Francel & VIENNE Charles
+
+
+Les commandes suivantes exportent l'environnement de développenment d'android à la console:
+
+export PATH=/home/terafc/android-sdk-linux_x86/tools:${PATH}
+export PATH=/home/terafc/android-sdk-linux_x86/platform-tools:${PATH}
+
+ (execution des commandes android directement a la console)
+
+ la commande mount :
+ mount -o loop dossier_android/plateform-tools/ma-carte-sd /dossier_destination /*monte la carte sd dans un dossier destination.*/
+
+ ./android create avd --name nom-machine --target 4 --sdcard nom_carte_sd
+
+ commande adb
+
+ adb push fichier_local /sdcard/   	/*permet de copier un fichier local vers la machine virtuelle*/
+
+Pour l'adaptation du fichier html à l'émulateur, il faut ajouter un doctype en début de page et un meta dans la balise "head"
+
+Pour afficher le fichier html sur l'émulateur, on utilise la commande suivante:
+
+content://com.android.htmlfileprovider/sdcard/dossier/fichier.html
+ 
+LISTES DE COMMANDES UTILES ET LEUR SYNTAXE:
+===============================
+
+cd
+Permet de naviguer dans les répertoires
+Syntaxe: 
+cd /répertoire1/répertoire2/....7
+Utile:
+cd ~/ # permet d'aller dans son répertoire personnel
+cd .. # revient dans le dossier parent ( dossier précédent)
+
+ls
+Liste le contenu d'un dossier
+syntaxe:
+ls /répertoire1  #liste le contenu du répertoire1
+ls /répertoire1/répertoire2 #liste le contenu du répertoire2 contenu dans le répertoire1
+Utile:
+ls -a # liste tous les fichiers caché ou pas
+ls -l # liste en détaille tous les fichiers (permissions d'accès, le nombre de liens physiques, le nom du propriétaire et du groupe, la taille en octets, et la date de création)
+ls -ld # pour les répertoires
+ll ou ls -i # liste en détaille tous les fichiers cachés ou pas
+ls -R # affiche l'arborescence d'un répertoire
+ls -d # affiche les noms de répertoires plutôt que leur contenu
+more
+affiche le contenu d'un fichier page par page
+Syntaxe:
+more test.txt # affiche dans la console le contenu du fichier test.txt
+
+less
+Affiche le contenu d'un fichier page par page ( plus pratique)
+Syntaxe:
+less test.txt #affiche dans la console le contenu du fichier test.txt
+
+pwd
+Affiche le répertoire/le chemin en cours
+
+mkdir
+Créer un dossier
+Syntaxe:
+mkdir /répertoire1 #crée le répertoire1
+mkdir /répertoire1/répertoire2 # crée le répertoire2 dans le répertoire1
+Utile:
+mkdir -p #permet de crée une arborescence de répertoire ==> rep1/rep2/rep3/rep4.....
+
+rmdir
+Supprimer un répertoire VIDE !!
+Syntaxe:
+rmdir /répertoire1 # supprime le répertoire1
+rmdir /répertoire1/répertoire2 # supprime le répertoire2 dans le répertoire1
+Utile:
+rmdir -p # permet de supprimer une arborescence
+rm
+Supprimer un fichier/un répertoire
+Syntaxe:
+rm fichier1 # supprime le fichier1
+Utile:
+rm -f # supprimer le fichier sans confirmation
+rm -r # supprimer récursivement les fichiers ainsi que les répertoires
+
+
+cp
+Copie un fichier ou un répertoire ( ATTENTION!! supprimer/remplace un fichier de même nom)
+Syntaxe:
+cp fichier1 /répertoire1 # copie le fichier 1 dans le répertoire1
+cp /répertoire1 répertoire2/ # copie le répertoire1 dans le répertoire2 ( ATTENTION "/" à la fin)
+Utile:
+cp -i # Demande une confirmation avant d'écraser sil existe un fichier ou répertoire de même nom
+cp -a # copie en gardant les droits,propriétaire,dates
+cp -R #copie récursivement ( grâce a cette commande on peut copier un fichier sous un autre nom)
+
+
+mv
+Permet de déplacer ou renommer un fichier ou un répertoire
+Syntaxe:
+Pour renommer:
+mv fichier_a_renommer nom_fichier_renommé 
+mv fichier1 fichier2 # renomme le fichier 1 en fichier 2
+mv rep1 monrep2 # renomme le répertoire rep1 en monrep2
+
+Pour déplacer:
+mv fichier1 rep1/ # déplace le fichier1 dans le répertoire rep1
+mv /rep1 rep2/ # déplace le répertoire rep1 dans le répertoire rep2 ( ATTENTION "/" à la fin)
+Utile:
+mv unRep/monFichier 
+Déplace le fichier monFichier du répertoire unRep là où on se trouve
+
+
+touch
+Permet de créer un fichier ou modifier la date d’accès et la  date  de  modification.
+Syntaxe:
+touch monfichier.txt # crée le fichier monfichier.txt
+
+tar
+Permet d'archiver, de compresser un fichier ou un répertoire et dés-archiver un fichier
+Option:
+-c : crée l'archive
+-x: extrait l'archive
+-f : utilise le fichier donné en paramètre
+-v : active le mode « verbeux » (bavard, affiche ce qu'il fait)
+-z : ajoute la compression Gzip.
+
+Syntaxe:
+Archiver:
+tar czvf test.txt test.tgz # archive et compresse (avec la compression Gzip) le fichier test.txt  dans le fichier test.tgz
+
+Dés-archiver:
+tar xzvf test.tgz # dés-archive le contenu de l'archive test.tgz
+Utile:
+tar  tzvf test.tgz # vérifie/affiche le contenu de l'archive test.tgz
+
+uname
+Permet de savoir le nom du noyau
+Utile:
+uname -r # permet de savoir la version du noyau
+uname -a  # permet de savoir le nom du noyau,le nom de la machine,la version du noyau,la date de compilation du noyau et la plateforme ( Intel ou AMD)
+
+
+grep
+Recherche des caractères dans un fichier
+Syntaxe:
+grep carct1 fich1 #cherche le caractère 'caract' dans le fichier 'fich1'
+Utile:
+grep -i  #cherche un caractère sans tenir compte de la casse
+grep -n # cherche un caractère et affiche les numéros des lignes où il apparait
+grep -c # affiche le nombre de ligne dans lequel le caractère recherche apparait
+grep -v # fais une recherche inversée, affiche tous sauf ce qui est précisé
+grep -l # affiche les noms des fichiers où figure au moins une fois le mot chercher
+grep -L #affiche les noms des fichiers où ne figure pas le mot rechercher
+grep -mn # permet d'arreter la recherche apres avoir trouvé n ligne qui correspond à la recherche
+grep '\(mot1\|mot2\)' # cherche les caracteres mot1 et mot2 séparement
+
+cat
+Affiche le contenu d'un fichier
+Syntaxe:
+cat fich1 #affiche le contenu du fichier 'fich1'
+Utile
+cat -n #affiche en plus les numéros des lignes
+
+
+top
+Gestionnaire de processus
+Utile
+top -u utilis1 #affiche les processus de l'utilisateur 'utilis1'
+
+cut
+Affiche des parties sélectionnées des lignes de chaque fichier
+Utile
+l'option -d permet de fixer un délimiteur pour les champs
+cut -d : fichier # va considérer qu'un champs dans la ligne est séparé par des ":"
+cud -d / fichier # va considérer qu'un champs dans la ligne est séparé par des "/"
+!!Par défaut le délimiteur est une tabulation
+-f : permet de selectionner les champs ou le champs qu'on veut
+cut -fn #sélectionne que les n premiers champs d'une ligne et n'affiche pas le reste
+cut -s # supprime
+
+sort
+Trie les lignes des fichiers texte, par défaut il trie selon le nom
+Utile
+-g : permet de comparer selon la valeur numérique des caracteres
+-n : permet de comparer selon la valeur numérique de la chaines
+
+uniq
+Signal ou élimine les lignes répétées ( supprime les doublons)
+Utile
+-c : permet de compter les lignes répétées
+-d : n'affiche que le lignes dupliquées
+-u : n'affiche pas les lignes uniques
+
+ln
+Créer des liens entre des fichiers
+Utile
+Syntaxe :
+ln destination  source
+ln -s /opt/lampp/lampp /usr/bin/lampp
+# crée un lien symbolique du fichier lampp dans le repertoire /opt/lampp vers le fichier lampp dans le répertoire /usr/bin/
+
+
+ASTUCES
+======
+
+Le tunnel
+-----------
+|
+Sert a rediriger la sortie d'un programme vers un autre
+Syntaxe:
+prog1 | prog2  # redirige la sortie du programme prog1 vers le programme prog2
+Exemple:
+Lorsque la sortie de la commande ls est trop nombreux pour être contenu dans la page  du terminal, la redirection vers le programme less ou more permet de l'afficher toutes la liste dans le terminal page par page.
+ls | less
+
+La redirection:
+------------------
+>
+l'utilisation du caractère «>» permet de rediriger la sortie d'une commande située
+à gauche vers le fichier situé à droite
+Syntaxe:
+ls -al /home/hk/ > toto.txt
+
+L'emploi d'un double caractère «>>» permet de concaténer la sortie  vers le fichier, c'est-
+à-dire ajouter la sortie à la suite du fichier, sans l'écraser.
+
+
+RACCOURCIS
+========
+Dans le shell:
+crtl+a ==> allez en début de ligne
+crtl+e ==> allez en fin de ligne
+echap+d ==> supprime un mot
+crtl+r ==> cherche dans l'historique des commandes
+
+
+
+
+UTILISATION DE GIT
+===========
+
+Configuration:
+-----------------
+La premiere chose à faire c'ets de configurer le nom et l'adresse mail que Git utilisera pour signer les commits:
+
+git config --global user.name "le_nom"
+git config --global user.email "adresse@email.com"
+Le fichier de configuration est:~/.gitconfig
+
+UTILISATION BASIQUE
+=============
+On a 2 choix,soit cloner un depot qui existe deja, soit en initialisant un  depot depuis un dossier vide.
+
+Cloner un dépot:
+---------------------
+On a besoin de connaitre l'adresse URL Git du projet, il peut etre en local ou sur internet
+Exemple commande : ( il faut d'abord se placer dans le dossier ou l'on veut copier le depot)
+Par le protocole GIT:
+git clone git://git.kernel.org/pub/scm/git/git.git
+
+Par http:
+git clone http://www.kernel.org/pub/scm/git/git.git
+
+ou en local
+git clone /home/terafc/todolist
+
+git clone --bare # l'option --bare permet de cloner un depot éxistant en considéranr le clone un dépot réferentiel nu.
+
+Initialiser un depot:
+------------------------
+mkdir un_dossier
+cd un_dossier
+git init
+git add file1 file2 file3 # ajoute des fichiers au dépot
+
+On peut maintenant  faire un commit. On peut verifier ce qui va etre commité avec:
+git diff --cached # l'option --cached permet de voir toutes les modifications meme avant un commit
+git status # Permet de voir la situation des fichiers
+
+git commit # permet de commiter
+
+Pour la suite avant de commiter il est necessaire de renvoyer les fichiers avec la commande "git add" mais cette commande de passer outre:
+git commit -a
+# l'option -m permet de rajouter un commentaire :
+Exemple:
+git commit -a -m "le_commentaire"
+
+Lorsqu'on veut envoyer les mises à jour apres un commit sur un serveur de depot on peut faire la commande:
+
+git push lien_vers_le_serveur
+#  Il peut etre nécessaire de préciser le nom de la branche avec :
+git push nom_branch lien_vers_serveur
+
+Exemple pour github:
+
+git push git@github.com:terafc/le_depot.git
+
+
+Au contraire lorsqu'on veut récuperer des mises a jour depuis un serveur de depot on fait la commande:
+
+git pull git@github.com:terafc/le_depot.git
+
+ / \ est différent 
+/ ! \ Dans les deux cas il faudra d'abord se placer dans le dossier où sont/on veut stocker les mises à jours
+
+Dans le cas du premier push ou que l'ordinateur d'où l'on veut télecharger ou envoyer les fichiers  est différent , il est possible qu'une clé publique RSA soit demandé. Dans ce cas il faut copier le contenu du fichier: ~/.ssh/id_rsa.pub sur le serveur pour accepté l'ordinateur.
+
+Si ce fichier n'existe pas il faudra le générer avec la commande :
+ ssh-keygen -t rsa
+, ne pas attribuer de nom précis, et donner un mot de passe privé et copier le contenu du fichier géneré (~/.ssh/id_rsa.pub ) sur le serveur.
+
+USAGE BASIQUE DES BRANCHES ET DES MERGES
+=============================
+
+git branch nom_nouvelle_branche
+# Permet de crée une nouvelle branche
+
+git checkout nom_nouvelle_branche
+# permet de passer sur cette nouvelle branche
+
+Il est alors conseillé de préciser lorsqu'on veut faire un push ou un pull quel est la branche désiré:
+git push origin branch1
+git pull origin branch2
+
+
